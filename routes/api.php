@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +18,8 @@ Route::prefix('auth')->group(function () {
     Route::post('logout', [App\Http\Controllers\LoginController::class, 'logout']);
     Route::post('register', [App\Http\Controllers\RegisterController::class, 'register']);
 
+});
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('teste', [App\Http\Controllers\LoginController::class, 'teste']);
 });
