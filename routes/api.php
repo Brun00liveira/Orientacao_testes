@@ -19,3 +19,5 @@ Route::prefix('auth')->group(function () {
     Route::post('register', [App\Http\Controllers\RegisterController::class, 'register']);
 
 });
+
+Route::get('teste', fn () => response()->json(['message' => 'ok']));
