@@ -1,9 +1,10 @@
 <?php
 
 use function Pest\Laravel\getJson;
+use function Pest\Laravel\postJson;
 
-it('should return status code 200', fn () =>
-    getJson('api/teste', [
+it('should auth user', fn () =>
+    postJson('api/teste', [
         'Content-type' => 'application/json'
     ])->assertStatus(200)
 );
