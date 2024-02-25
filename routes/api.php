@@ -21,3 +21,7 @@ Route::prefix('auth')->group(function () {
 });
 
 Route::get('teste', fn () => response()->json(['message' => 'ok']));
+
+Route::get('/xdebug-info', function () {
+    return phpinfo();
+});
